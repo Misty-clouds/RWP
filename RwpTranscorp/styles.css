@@ -1,0 +1,1553 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  height: 100vh;
+  font-family: 'Nats', Quicksand; /* Applying NATS font globally */
+  overflow-x: hidden;
+}
+h1{
+  color: rgba(29, 27, 27, 0.90);
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: 70px; /* 140% */
+}
+
+.h1-green{
+  color: #28A745;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: 70px;
+}
+h2{
+  color: var(--Grey-Scale-Black, #191825);
+font-size: 44px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 52.8px */
+}
+
+h3{
+  color: #28A745;
+font-size: 23px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 27.6px */
+letter-spacing: 4.6px;
+text-transform: uppercase;
+}
+.p-black{
+  color: #28A745;
+text-align: center;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 33.6px */
+}
+
+p{
+  color: rgba(25, 24, 37, 0.50);
+font-family: 'Inter',NATS;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; /* 28.8px */
+}
+a{
+  color: rgba(25, 24, 37, 0.50);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; 
+  text-decoration: none;
+  margin: 20px;
+}
+
+/* Semi-Circle at the Top Left */
+.semi-circle {
+  position: absolute;
+  top: -356px;
+  left: -223px;
+  width: 500px;
+  height: 500px;
+  background: #28A745;
+  opacity: 0.5;
+  border-radius: 9999px;
+  filter: blur(500px);
+  box-shadow: 500px 500px 500px rgba(0, 0, 0, 0.1); /* Added Box Shadow */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: white;
+  
+}
+
+.logo img {
+  width: 150px;
+}
+
+/* Remove bullets from navigation */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgba(25, 24, 37, 0.50);
+  font-weight: 400px;
+
+}
+
+.navbar ul.nav-links li:first-child a {
+  color: black;
+}
+
+.nav-links li a:hover {
+  color: #007BFF;
+}
+#current-tab a{
+  color: black;
+}
+.quote-btn {
+  display: flex;
+padding: 16px 32px;
+align-items: flex-start;
+gap: 8px;
+border-radius: 100px;
+background: #28A745;
+color: #EEE;
+font-family: NATS;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 19.2px */
+text-decoration: none;
+
+}
+
+.quote-btn:hover {
+  background-color: #45a049;
+  box-shadow: #222831;
+}
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* For tablet and mobile view */
+@media (max-width: 1024px) { /* Updated to include tablets */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    z-index: 1;
+  }
+
+  .nav-links.active {
+    display: flex;
+    color:#222831;
+    font-size:20px;
+    font-weight:400
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .quote-btn {
+    display: none; /* Hiding the "Request Quote" button for mobile and tablet */
+  }
+}
+
+
+/* For larger screens (desktops) */
+@media (min-width: 1025px) {
+  .hamburger {
+    display: none; /* Hide hamburger for larger screens */
+  }
+
+  .nav-links {
+    display: flex;   align-items: flex-end;
+
+    font-family:NATS;
+    font-size: 20px;
+    font-weight:400;
+    color:rgba(123, 123, 130, 0.5);
+  }
+ 
+}
+/*home section*/
+
+#wrapper {
+  width: 100vw;
+  height: 632px; /* You can adjust this for better responsiveness */
+  display: flex;
+  flex-wrap: wrap; /* Ensure this is set to wrap */
+  flex-direction: row; /* Row direction */
+  margin: 0 auto; /* Corrected to use auto for centering */
+  justify-content:flex-start;
+  align-items: center;
+  align-content: flex-start;
+  font-family: NATS;
+
+}
+
+.intro {
+  display: flex;
+  width: 45%; /* 50% width for larger screens */
+  flex-direction: column;
+  align-items: flex-start;
+  height: 632px; /* Full height to fill wrapper */
+  padding-left: 10%;
+  justify-content: flex-start;
+gap: 32px;
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  width: 55%;
+  height: 632px;
+  justify-content: center;
+  gap: 32px;
+}
+#intro-btn{
+margin: 0;}
+
+.explore{
+  display: flex;
+padding: 16px 32px;
+align-items: center;
+gap: 16px;
+border-radius: 100px;
+background: #FFF;
+box-shadow: 0px 856px 240px 0px rgba(0, 0, 0, 0.00), 0px 548px 219px 0px rgba(0, 0, 0, 0.01), 0px 308px 185px 0px rgba(0, 0, 0, 0.04), 0px 137px 137px 0px rgba(0, 0, 0, 0.06), 0px 34px 75px 0px rgba(0, 0, 0, 0.07), 0px 0px 0px 0px rgba(0, 0, 0, 0.07);
+}
+
+
+.two-pictures{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 32px;
+}
+.photos{
+  width: 272px;
+height: 300px;
+border-radius: 24px;
+background: #28A745
+}
+.one-photo{
+  width: 272px;
+height: 400px;
+border-radius: 24px;
+background: #28A745
+}
+@media (max-width: 768px) {
+  .photos{
+    width:150px;
+    height: 170px;
+  }  
+  .one-photo{
+    width: 150px;
+    height: 200px;
+  }
+
+  .intro{
+    margin-top: 30px;
+    width: 100vw;
+    gap: 12px;
+    height: 300px;
+    padding: auto;
+    margin-bottom: 30px;
+  } 
+  .gallery{
+    margin: 0 auto;
+    margin-top: 0;
+  }
+
+  .home-h1{
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 400;
+
+
+  }
+ .h1-green{
+  display: block;
+  font-size:35px;;
+  line-height: 60px;
+  font-weight: 400;
+
+ }
+ body{
+  overflow-x: hidden;
+
+ }
+  }
+ 
+
+.wrap2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 660px;
+  width: 100%;
+  margin-top: 122px;
+  position: relative;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.big-purple {
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  fill: var(--Gradient, linear-gradient(281deg, #5D50C6 7.11%, #F85E9F 93.54%));
+  filter: blur(6px);
+  position: absolute;
+  top: 0;
+  right: 12%;
+}
+
+.small-purple {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  top: -20px;
+  left: 20%;
+  position: absolute;
+}
+
+.small-green {
+  width: 40px;
+  height: 40px;
+  background-color: #86ffa2;
+  filter: blur(2px);
+  position: absolute;
+  right: 0;
+  top: 184px;
+  border-radius: 40px;
+}
+
+.about-triangle {
+  width: 65px;
+  height: 169.949px;
+  flex-shrink: 0;
+  top: -226px;
+  left: 5%;
+  position: absolute;
+}
+
+.g-two {
+  width: 50%;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+}
+
+.about-article {
+  position: relative;
+  flex-direction: column;
+  width: 50%;
+  display: flex;
+  gap: 20px;
+  padding: 77px;
+}
+
+.article-design {
+  padding: 32px;
+  border-radius: 100px;
+  background: #28A745;
+  box-shadow: 0px 385px 108px 0px rgba(0, 0, 0, 0.00),
+    0px 246px 99px 0px rgba(0, 0, 0, 0.00), 0px 139px 83px 0px rgba(0, 0, 0, 0.01),
+    0px 62px 62px 0px rgba(0, 0, 0, 0.02), 0px 15px 34px 0px rgba(0, 0, 0, 0.03),
+    0px 0px 0px 0px rgba(0, 0, 0, 0.03);
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  top: 45%;
+  right: 7%;
+}
+
+.about-semicircle {
+  height: 500px;
+  width: 500px;
+  border-radius: 500px;
+  opacity: 0.5;
+  background: #28A745;
+  filter: blur(250px);
+  position: absolute;
+  top: -166px;
+  right: -300px;
+  z-index: -1;
+}
+@media (max-width: 762px) {
+  .about-semicircle{
+    display: none;
+  }
+}
+
+.bow {
+  width: 90%;
+  height: 83%;
+  border-radius: 0px 500px 500px 0px;
+  background: #86ffa2;
+  margin-top: 103px;
+  align-content: center;
+  position: relative;
+  align-self: flex-end;
+}
+
+.white-truck {
+  width: 100%;
+  height: 438px;
+  margin-left: 5%;
+  position: absolute;
+  left: 3%;
+  bottom: 15%;
+}
+
+.art {
+  margin-top: 30%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bow{
+    width: 290px;
+    height: 292px;
+    flex-shrink: 0;
+    border-radius: 0px 500px 500px 0px;
+    background: #86FFA2;
+    position: relative;
+  }
+
+  
+  .white-truck{
+    width: 300px;
+    height: 208px;
+  }
+
+  .small-purple{
+    width: 20px;
+    height: 20px;
+    top: -10px;
+  }
+
+  .about-triangle {
+top: 890px;
+z-index: -1;
+  }
+  .g-two,.about-article{
+    width: 100%;
+  }
+  .wrap2{
+    align-content: flex-start;
+    margin-top: 300px;
+  }
+  .about-article{
+    padding: 30px;
+  }
+  .logo{
+    width: 100px;
+  }
+  .h2-mobile{
+    font-size:30px;
+  }
+}
+
+
+
+/* General Styling for the Service Row */
+.service-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5px;
+  padding-bottom: 110px;
+  position: relative;
+}
+
+.service-intro {
+  display: flexbox;
+  width: 40%;
+  height: 100%;
+  gap: 20%;
+  padding-left: 8.5%;
+  justify-content: center;
+  align-content: center;
+  padding-top: 85.5px;
+}
+
+/* Card Wrap for Desktop/Tablet (Horizontal Scrolling) */
+.card-wrap {
+  display: flex;
+  width: 60%;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-y: hidden;
+  white-space: nowrap; /* Prevents cards from wrapping to next line */
+  scroll-snap-type: x mandatory; /* Optional for smoother snapping */
+  gap: 20px;
+  scrollbar-width: none; /* Firefox */
+  background-color: #FFF;
+  padding-bottom: 122px;
+}
+
+.card-wrap::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Edge */
+}
+
+/* Service Card Styling */
+.service-card {
+ display: flex;
+  flex-direction: column; /* Aligns items vertically (image above text) */
+  justify-content: center; /* Centers items vertically */
+  align-items: center; /* Centers items horizontally */
+  padding: 64px 70px;
+  border-radius: 32px;
+  background: #FFF;
+  box-shadow: 0px 41px 89px 0px rgba(0, 0, 0, 0.10), 0px 0px 0px 0px rgba(0, 0, 0, 0.10);
+  width: 350px; /* Ensure each card has a fixed width */
+  height: 100%;
+}
+#card-index{
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: none;
+}
+
+.service-image {
+  height: 200px;
+  width: 200px;
+  background-color: #28A745;
+}
+
+.label {
+  margin-top: 12px;
+  text-align: center;
+}
+.arrow-box{
+  height: 100px;
+  width: 32px;
+  display:inline-flex;
+  gap: 32px;
+  position: absolute;
+  right: 50%;
+  bottom: 120px;
+}
+.circle-white{
+  width: 100px;
+height: 100px;
+flex-shrink: 0;
+border-radius: 100px;
+border: 1px solid var(--Grey-Scale-Black-10, rgba(25, 24, 37, 0.10));
+background: var(--white, #FFF);
+}
+
+.circle-green{
+  border-radius: 100px;
+background: #28A745;
+width: 100px;
+height: 100px;
+flex-shrink: 0;
+border: none;
+color: white;
+}
+
+
+
+/* Media Query for Mobile Devices (Vertical Layout) */
+@media only screen and (max-width: 767px) {
+  .service-row{
+    align-content: flex-start;
+    padding-top: 530px;
+    flex-wrap: wrap;
+  }
+  .service-intro{
+    width: 100%;
+    padding: 20px;
+  }
+  .card-wrap{
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+  .arrow-box{
+    display: none;
+  } 
+  .service-image{
+    border-radius: 10%;
+  }
+  .card-index{
+    box-shadow: none;
+  }
+  .service-card{
+    width: 100%;
+  }
+  #card-index{
+    margin: 0;
+  }
+  #last-card{
+    box-shadow: none;
+  }
+}
+
+.how{
+  height: 841px;
+  padding: 103px,0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 103px;
+}
+
+.how-design{
+  position: absolute;
+  width: 100px;
+  height:100px;
+  top: -200px;
+  right:3%;
+}
+.w-head{
+ text-align: center;
+ margin-bottom:30px;
+ font-size: 40px;
+}
+.wrap3{
+  width: 100%;
+  height: 515px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.g3{
+  height: 100%;
+  width: 50%;
+  position: relative;  
+  background-image: url('assets/Photo.png')}
+
+.corner-img{
+  position: absolute;
+  background-color: yellow;
+  height: 331px;
+  width: 400px;
+  bottom: 0;
+  right:0;
+  border: 24px solid var(--white, #FFF);
+
+}
+.a3{
+  width: 50%;
+  height:100%;
+  flex-direction: column;
+  align-content: flex-end;
+}
+.a3-text-row{
+  margin-left:5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+.a3-text-col{
+  padding-left: 5% ;
+  justify-content: space-around;
+  
+}
+.a3-icon{
+  height: 64px;
+  width: 64px;
+  align-self: flex-start;
+  padding-right:6%;
+}
+.a3-head{
+  color: #1C1F35;
+font-family: NATS;
+font-size: 35px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+@media only screen and (max-width: 767px) {
+  .g3{
+    width: 100%;
+    height: 300px;
+  }
+  .how-design{
+    width: 50px;
+    height: 50px;
+    left: 20px;
+  }
+  .how{
+   margin-top: 0; 
+  }
+  .corner-img{
+    width: 230px;
+    height: 173px;
+    bottom: 0;
+    right: 0;
+  }
+  .main-image{
+    height: 260px;
+    width: 100%;
+  }
+  .a3{
+    width: 100%;
+    margin-top: 100px;
+    padding: 20px;
+  }
+  .w-head{
+    font-size: 33px;
+  }
+  .a3-head{
+    font-size: 24px;
+  }
+}
+
+
+
+.our-fleet{
+  height: 841px;
+  padding: 103px,0;
+  display: flex;
+  flex-direction: column;
+}
+.wrap4{
+  width: 100%;
+  height: 772px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.intro-new{
+  width: 50%;
+  height:100%;
+  flex-direction: column;
+  align-content: center;
+  justify-items: stretch;
+  padding-left: 5%;
+  padding-left: 6%;
+  
+}
+
+.intro-new h3,.intro-new h2{
+  padding-bottom: 20px;
+}
+.fleet-details{
+  width: 100%;
+  height: 164px;
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;  
+}
+.fleet-icon{
+  height:70px;
+  width:70px;
+  padding-right:10px;
+  align-self: center;
+}
+.fleet-details-column{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-right: 30px;
+  margin-left: 20px;
+}
+.p-bold{
+  color: black;
+  
+}
+
+
+#og{
+  height: 100%;
+  width: 50%;
+  align-content: center;
+  position: relative;  
+  margin: 0 auto;  
+}
+.oval{
+  height: 665px;
+  width: 443px;
+  border-radius: 500px;
+  margin-left: 3%;
+}
+.oval2{
+  position: absolute;
+  border-radius: 500px;
+height:496px;
+width: 351px;
+bottom: 0;
+left: 29%;
+}
+.gr{
+  position: absolute;
+  top: 0px;
+  right:0px;
+  height:35% ;
+  width: 54%;
+  z-index:-1;
+}
+
+@media only screen and (max-width: 767px) {
+  .intro-new,og{
+    width: 100%;
+  }
+  .wrap4{
+    margin-top: 300px;
+    align-content: flex-if am testing a page via a port thus it causes overflowstart;
+  }
+  #og{
+    margin: 0 20px;
+    align-items: center;
+    align-content: flex-start;
+  }
+  .oval{
+    width: 287px;
+    height: 430px;
+  }
+  .oval2{
+    width: 230px;
+    height: 300px;
+    bottom: 270px;
+    left: 110px;
+  }
+  .our-fleet{
+    padding: 0;
+    margin-top: 50px;
+  }
+  .h2-heading{
+    font-size: 32px;
+  }
+}
+
+
+.test-wrap{
+  height: 645px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+
+.circle-image{
+  height: 128px;
+  width: 128px;
+  margin: 64px 35% 64px 35%;
+  border-radius: 128px;
+  background-color: pink;
+  z-index: 3;
+}
+
+
+.stars{
+  height: 32px;
+  width: 224px;
+  margin: 32px;  
+}
+#test-head{
+  margin-bottom: 12px;
+}
+
+.testIndexContainer{
+  margin-top: 64px;
+  display: flex;
+  flex-direction: row;
+  row-gap: 5px;
+  width: 120px;
+  justify-content: space-between;
+}
+
+.testIndex{
+  height: 24px;
+  width:24px;
+  border-radius: 24px;
+  background-color: #D9D9D9;
+}
+#testIndex2{
+  background-color: #45a049;
+}
+.blob{
+position: absolute;
+flex-shrink: 0;
+left: -50%;
+z-index: 2;
+top: -300px;
+}
+
+@media (max-width:760px) {
+  .test-wrap{
+    margin-top: 800px;
+  }
+  .blob{
+    width: 70%;
+    left: -30px;
+    top:-380px;
+  }
+  .circle-image{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+  }
+  #p-desc{
+    display: none;
+    align-items: flex-end;
+  } 
+
+  .testimony{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+
+.faq-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0;
+  position: relative;
+}
+
+.faq-box-design{
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.faq-title {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: 176px;
+
+}
+
+
+.faq-title span {
+  color: #28A745; /* Customize the color of "QUESTIONS" */
+}
+
+.faq-container {
+  margin-top: 30px;
+}
+
+.faq-item {
+  border: 2px solid #EDEDED;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.faq-header h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  color: #333;
+  font-family: Inter;
+}
+
+.faq-toggle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #28A745; /* The color of the toggle (+/-) */
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 20px;
+}
+
+.faq-content p {
+  margin: 15px 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+.faq-item.active .faq-content {
+  max-height: 200px; /* Adjust height based on content */
+}
+
+.faq-item.active .faq-toggle {
+  content: '-';
+}
+
+
+
+footer {
+  background-color: #F8F9FA;
+  padding: 40px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo Styles */
+.footer-logo img {
+  width: 150px;
+}
+
+/* Bottom Navigation */
+.footer-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Social Media & Phone Section */
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons i {
+  color: #28A745;
+  font-size: 24px;
+}
+
+.phone-contact {
+  display: flex;
+  align-items: center;
+}
+
+.phone-contact i {
+  color: #28A745;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.phone-contact span {
+  color: #333;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+
+/* Tablet: Adjust layout for tabl                <img src="assets/green-Dot.svgg" alt="">
+ets (width less than 992px) */
+@media (max-width: 992px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .footer-nav {
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+  }
+
+  .footer-logo img {
+      width: 120px; /* Reduce logo size */
+  }
+
+  .phone-contact span {
+      font-size: 16px; /* Adjust phone number font size */
+  }
+
+  .social-icons i {
+      font-size: 20px; /* Adjust social icon size */
+  }
+}
+
+/* Mobile: Adjust layout for phones (width less than 768px) */
+@media only screen and (max-width: 767px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0; /* Reduce padding */
+  }
+  
+  .footer-nav {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+  }
+
+  .footer-logo img {
+      width: 100px; /* Reduce logo size further */
+  }
+
+  .phone-contact span {
+      font-size: 14px; /* Adjust phone number font size */
+  }
+
+  .social-icons i {
+      font-size: 18px; /* Adjust social icon size */
+  }
+
+  .phone-contact i {
+      font-size: 20px; /* Adjust phone icon size */
+  }
+}
+
+
+/* Animations*/
+
+/* Keyframes for fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to intro text */
+.intro p,
+.intro h1,
+.intro a {
+  animation: fadeIn 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger the animations for each element */
+.intro p {
+  animation-delay: 0.3s;
+}
+
+.intro h1 {
+  animation-delay: 0.5s;
+}
+
+.intro a {
+  animation-delay: 0.7s;
+}
+
+/* Keyframes for zoom-in */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to gallery images */
+.photos,
+.one-photo {
+  animation: zoomIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger the zoom for each image */
+.photos:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.photos:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.one-photo {
+  animation-delay: 0.7s;
+}
+
+/* Keyframes for slide-in */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the explore section */
+.explore {
+  animation: slideIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+/*About Section*/
+
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the SVG elements */
+.big-purple svg, .small-purple svg, .about-triangle svg {
+  animation: zoomIn 1.2s ease-in-out;
+}
+
+/* Keyframes for zoomIn and fadeInUp */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure initial opacity is 0 for elements */
+.big-purple svg, .small-purple svg, .about-triangle svg {
+  opacity: 0; /* Start hidden */
+}
+
+.about-article h3,
+.about-article h2,
+.about-article p {
+  opacity: 0; /* Start hidden */
+}
+
+/* Apply fade-in-up animation only when the .animate class is added */
+.about-article.animate h3,
+.about-article.animate h2,
+.about-article.animate p {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Adding staggered delay for each element */
+.about-article.animate h3 {
+  animation-delay: 0.3s;
+}
+
+.about-article.animate h2 {
+  animation-delay: 0.6s;
+}
+
+.about-article.animate p {
+  animation-delay: 0.9s;
+}
+
+.small-green:hover {
+  background-color: #00ff7f;
+  transition: background-color 0.3s ease;
+}
+
+/* Mobile-specific animations */
+@media (max-width: 768px) {
+  .about-article h3, .about-article h2, .about-article p {
+    animation-duration: 1s;
+  }
+
+  /* Increase padding for mobile */
+  .about-article {
+    padding: 40px;
+  }
+}
+/* Slide-in from left animation */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Ensure initial opacity is 0 for the sliding elements */
+.bow, .white-truck {
+  opacity: 0; /* Start hidden */
+}
+
+/* Slide-in animation when the .animate class is added */
+.bow.animate,
+.white-truck.animate {
+  animation: slideInLeft 1.5s ease-out forwards;
+}
+.white-truck:hover.animate {
+  transform: scale(1.05); /* Enlarge on hover */
+  transition: transform 0.5s ease; /* Smooth transition */
+}
+
+
+.service-intro h3,
+.service-intro h2,
+.service-intro p {
+  opacity: 0; /* Start hidden */
+}
+
+/* Apply fade-in-up animation only when the .animate class is added */
+.service-intro.animate h3,
+.service-intro.animate h2,
+.service-intro.animate p {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Adding staggered delay for each element */
+.service-intro.animate h3 {
+  animation-delay: 0.3s;
+}
+
+.service-intro.animate h2 {
+  animation-delay: 0.6s;
+}
+
+.service-intro.animate p {
+  animation-delay: 0.9s;
+}
+
+/* Initially hide the service cards */
+.service-card {
+  opacity: 0;
+  transform: translateY(20px); /* Slightly below its final position */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* When the .animate class is added, the cards will fade in and slide up */
+.service-card.animate {
+  opacity: 1;
+  transform: translateY(0); /* Back to original position */
+}
+
+/* Adding staggered delays to each card */
+#card-index.animate {
+  transition-delay: 0.2s;
+}
+
+#card-index + .service-card.animate {
+  transition-delay: 0.4s;
+}
+
+#card-index + .service-card + .service-card.animate {
+  transition-delay: 0.6s;
+}
+
+#last-card.animate {
+  transition-delay: 0.8s;
+}
+
+/* Optional: add hover effect for a subtle scale-up interaction */
+.service-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+.a3 .a3-head,
+.a3 p {
+  opacity: 0; /* Start hidden */
+}
+
+/* Apply fade-in-up animation only when the .animate class is added */
+.a3.animate .a3-head,
+.a3.animate p {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Adding staggered delay for each element */
+.a3.animate .a3-head {
+  animation-delay: 0.3s;
+}
+
+.a3.animate p {
+  animation-delay: 0.9s;
+}
+
+.g3 .corner-img,
+.g3 {
+  opacity: 0; /* Start hidden */
+}
+
+.g3.animate .corner-img {
+  animation: fadeInScale 1.5s ease-out forwards;
+  animation-delay: 0.6s; /* Delay for each animation */
+}
+.g3.animate{
+  animation: slideIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px); /* Slide in from the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Final position */
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9); /* Start scaled down */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Full size */
+  }
+}
+
+
+
+ .intro-new h3,
+ .intro-new h2,
+ .intro-new p
+ {
+opacity: 0;
+}
+/* Animation for when the .animate class is added */
+.intro-new.animate h3,
+.intro-new.animate h2,
+.intro-new.animate p
+ {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+
+.intro-new.animate h3{
+  animation-delay: 0.6s;
+}
+.intro-new.animate h2{
+  animation-delay: 0.9s;
+}
+
+.intro-new.animate p{
+  animation-delay: 0.3s;
+}
+
+
+/* Initial state for the elements, start hidden */
+#og .oval,
+#og .oval2 {
+  opacity: 0;
+  transform: scale(0.9); /* Start with a smaller scale */
+}
+
+/* Animation when the 'animate' class is added */
+#og.animate .oval,
+#og.animate .oval2 {
+  animation: fadeInScale 1.5s ease-out forwards;
+}
+
+#og.animate .oval2 {
+  animation-delay: 0.5s; /* Staggered delay for the second image */
+}
+
+/* Define the fadeInScale keyframes */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9); /* Smaller scale */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Full size */
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.faq-section {
+  opacity: 0; /* Initial state */
+  transform: scale(0.8); /* Initial scale */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transition for opacity and scale */
+}
+
+.faq-section.visible {
+  opacity: 1; /* Final state */
+  transform: scale(1); /* Final scale */
+}
+
